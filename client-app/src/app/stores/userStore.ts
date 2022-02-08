@@ -1,7 +1,7 @@
 import { makeAutoObservable, runInAction } from 'mobx';
-import { history } from '..';
-import agent from '../app/api/agent';
-import { User, UserFormValues } from '../app/models/user';
+import { history } from '../..';
+import agent from '../api/agent';
+import { User, UserFormValues } from '../models/user';
 import { store } from './store';
 
 export default class UserStore {
@@ -53,5 +53,9 @@ export default class UserStore {
     } catch (error) {
       throw error;
     }
+  };
+
+  setImage = (image: string) => {
+    if (this.user) this.user.image = image;
   };
 }

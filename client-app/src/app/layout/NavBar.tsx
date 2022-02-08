@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react-lite';
 import { Link, NavLink } from 'react-router-dom';
 import { Button, Container, Menu, Image, Dropdown } from 'semantic-ui-react';
-import { useStore } from '../../stores/store';
+import { useStore } from '../stores/store';
 
 export default observer(function NavBar() {
   const {
@@ -38,7 +38,7 @@ export default observer(function NavBar() {
             <Dropdown.Menu>
               <Dropdown.Item
                 as={Link}
-                to={`/profile/${user?.username}`}
+                to={`/profiles/${user?.username}`}
                 text='My Profile'
                 icon='user'
               />
